@@ -4,11 +4,14 @@ CREATE TABLE sales(Transaction_ID INT, Date_ DATE, Customer_ID VARCHAR(20), Gend
 
 -- 1. Top 10 customers by total spending.
 SELECT
-	*
+        Customer_ID,
+        SUM(TotalPrice) AS total_spent
 FROM
-	Sales
-Order BY
-	TotalPrice DESC
+        Sales
+GROUP BY
+        Customer_ID
+ORDER BY
+        total_spent DESC
 LIMIT 10;
 
 -- 2. Total sales by Product category.
@@ -39,4 +42,4 @@ SELECT
 FROM
 	Sales
 GROUP BY
-	Customer_ID;
+        Customer_ID;
