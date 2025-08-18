@@ -1,42 +1,55 @@
+-- Select the Retail_Sale database.
 USE Retail_Sale;
 
-CREATE TABLE sales(Transaction_ID INT, Date_ DATE, Customer_ID VARCHAR(20), Gender VARCHAR(20), Age INT, Product_Category VARCHAR(20), Quantity INT, Price_per_Unit INT, Total_Amount INT, TotalPrice INT);
+-- Create the sales table to store transaction data.
+CREATE TABLE sales (
+    transaction_id INT,
+    sale_date DATE,
+    customer_id VARCHAR(20),
+    gender VARCHAR(20),
+    age INT,
+    product_category VARCHAR(20),
+    quantity INT,
+    price_per_unit INT,
+    total_amount INT,
+    total_price INT
+);
 
--- 1. Top 10 customers by total spending.
+-- Retrieve the top 10 customers by total spending.
 SELECT
-	*
+    *
 FROM
-	Sales
-Order BY
-	TotalPrice DESC
+    sales
+ORDER BY
+    total_price DESC
 LIMIT 10;
 
--- 2. Total sales by Product category.
-Select
-	Product_Category,
-    SUM(TotalPrice)
-FROM
-	Sales
-GROUP BY
-	Product_Category;
-
--- 3. Find the month with the highest sales.
+-- Calculate total sales by product category.
 SELECT
-	MONTH(Date_),
-    SUM(TotalPrice)
+    product_category,
+    SUM(total_price) AS total_sales
 FROM
-	Sales
+    sales
 GROUP BY
-	MONTH(Date_)
+    product_category;
+
+-- Find the month with the highest sales.
+SELECT
+    MONTH(sale_date) AS sale_month,
+    SUM(total_price) AS total_sales
+FROM
+    sales
+GROUP BY
+    MONTH(sale_date)
 ORDER BY
-	SUM(TotalPrice) DESC
+    SUM(total_price) DESC
 LIMIT 1;
 
--- 4. Average order value per customer.
+-- Compute the average order value per customer.
 SELECT
-	Customer_ID,
-    AVG(TotalPrice)
+    customer_id,
+    AVG(total_price) AS avg_order_value
 FROM
-	Sales
+    sales
 GROUP BY
-	Customer_ID;
+    customer_id;
