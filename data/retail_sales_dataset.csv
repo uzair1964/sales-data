@@ -1,0 +1,6 @@
+date,store,item,quantity,price
+2024-01-01,StoreA,Widget,5,20.00
+2024-01-02,StoreB,Gadget,2,15.50
+2024-01-03,StoreA,Widget,3,20.00
+2024-01-04,StoreC,Thingy,1,7.25
+2024-01-05,StoreB,Widget,4,20.00

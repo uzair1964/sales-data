@@ -19,6 +19,13 @@ pip install pandas seaborn matplotlib mysql-connector-python
 - **Retail_Sale** database: sample retail transactions used throughout the project.
 - **Build_week.sql**: creates the `sales` table and contains example queries for common business questions.
 - **SAL_BW_Project_3.ipynb**: Jupyter notebook that cleans the raw data and produces visualizations.
+- **data/retail_sales_dataset.csv**: small sample dataset for quick experimentation. Replace this file with your own data or download a larger dataset and save it with the same name.
+
+## Dataset
+
+The repository includes a sample CSV at `data/retail_sales_dataset.csv` to illustrate the expected format. For a full analysis,
+replace this file with your own retail sales data or download a dataset from a source such as Kaggle and save it to the `data/`
+directory using the same filename.
 
 ## Running the Analysis
 1. Open `SAL_BW_Project_3.ipynb` in Jupyter and execute the cells to clean the dataset and export it to MySQL.
