@@ -20,11 +20,6 @@ price-trend-analysis/
 ├─ README.md  
 
 
-## 🎥 Video Walkthrough of the Project
-Attached a brief video showing key visualizations and insights.
-
-## 🎥 Video Walkthrough of the Codebase
-Walkthrough explaining SQL queries, Pandas workflows, and modeling logic.
 
 ## ✨ Features
 - Aggregation of sales and pricing data using SQL
