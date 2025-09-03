@@ -1,68 +1,87 @@
-<!-- Project Logo (place your file at assets/logo.png) -->
-<p align="center">
-  <img src="assets/logo.png" alt="Sales Data Analysis Logo" width="320">
-</p>
+ ## 🧭 Introduction
+This Python-based data analysis project uses Pandas and MySQL to explore and forecast retail sales price trends. It investigates how discounts, seasonal patterns, and product categories impact final prices and profitability, helping stakeholders make informed pricing decisions. It also includes interactive visualizations for deeper insight.
 
-<h1 align="center">Sales Data Analysis</h1>
+## 🛠️ Project Type
+Backend (Python for analysis, SQL for data extraction)
 
-<p align="center">
-  End-to-end workflow: clean raw records in Python ➜ explore with SQL ➜ visualize in Jupyter.
-</p>
+## 🚀 Deployed App
+Frontend: Not applicable
+Backend: Jupyter Notebook / Python Script
+Database: MySQL
 
-<p align="center">
-  <!-- Tech Badges -->
-  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/pandas-%20-black?logo=pandas&labelColor=white" alt="pandas">
-  <img src="https://img.shields.io/badge/NumPy-%20-black?logo=numpy&labelColor=white" alt="NumPy">
-  <img src="https://img.shields.io/badge/Matplotlib-%20-black?logo=matplotlib&labelColor=white" alt="Matplotlib">
-  <img src="https://img.shields.io/badge/Seaborn-%20-black" alt="Seaborn">
-  <img src="https://img.shields.io/badge/MySQL-%20-black?logo=mysql&labelColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-black?logo=jupyter&labelColor=white" alt="Jupyter">
-</p>
+## 📁 Directory Structure
+price-trend-analysis/  
+├─ data/  
+│  ├─ retail_sales_dataset.csv  
+│  ├─ SAL_BW_Project_3.sql  
+├─ notebooks/  
+│  ├─ SAL_BW_Project_3 (1).ipynb  
+├─ visuals/    
+├─ README.md  
 
----
 
-## 🧭 Overview
-This project demonstrates a complete workflow for exploring **retail sales data**.  
-It starts by **cleaning** raw records in Python, continues with **structured queries** in SQL (MySQL), and finishes with **visualizations** in Jupyter notebooks (Seaborn/Matplotlib).
+## 🎥 Video Walkthrough of the Project
+Attached a brief video showing key visualizations and insights.
 
----
+## 🎥 Video Walkthrough of the Codebase
+Walkthrough explaining SQL queries, Pandas workflows, and modeling logic.
 
-## 💡 Why this project?
-- **Real-world pipeline:** Shows how messy CSVs become analysis-ready tables, then insights—exactly what most retail teams need.  
-- **Separation of concerns:** Python for cleaning, SQL for business questions, notebooks for quick visuals—clear and reusable.  
-- **Hiring-friendly:** Demonstrates skills used in analyst/data science roles (EDA, SQL queries, KPI reporting, basic ML-ready outputs).
+## ✨ Features
+- Aggregation of sales and pricing data using SQL
+- Pandas-based data cleaning and transformation
+- Forecasting price trends with rolling averages
+- Seasonal comparison using month/year filters
+- Visualizations (Matplotlib & Seaborn) for actionable insights
+- Profit impact analysis from price fluctuations
+  
+## 🎯 Design Decisions & Assumptions
+- Sales data ingested from MySQL tables
+- Price prediction based on historical trends and discounts
+- Data grouped by category, region, and time
+- Assumed clean timestamp format for monthly analysis
+- Outliers optionally trimmed for visualization clarity
+  
+## 🧪 Installation & Getting Started
 
-### 📌 When this analysis helps (use cases)
-- **Merchandising & assortment:** Identify top sellers/long-tail, category contribution, Pareto (80/20) for shelf/website placement.  
-- **Inventory & demand planning:** Spot seasonality and MoM/YoY trends to adjust stock, lead times, and safety stock.  
-- **Pricing & promotions:** Measure pre/post promo lift, discount effectiveness, and cannibalization across categories/channels.  
-- **Store/channel performance:** Compare stores or online channels, monitor AOV, units/order, margin %, return rate.  
-- **Operational monitoring:** Catch anomalies/outlier days and surface data quality issues early.
+bash
+git clone https://github.com/Shaileshahire06/Price-Trend-Analysis  
+cd Price-Trend-Analysis  
+pip install -r requirements.txt  
+jupyter notebook notebooks/SAL_BW_Project_3 (1).ipynb
 
----
 
-## 🧰 Tech Stack
-- **Python:** pandas, seaborn, matplotlib, mysql-connector-python  
-- **SQL:** MySQL Server / MySQL Workbench  
-- **Environment:** Jupyter Notebook (Python 3.x)
+To set up MySQL connection:
+- Create and populate your database using SAL_BW_Project_3.sql
+- Update connection details in the notebook config block
+  
+## 📌 Usage
+Run the notebook to:
+- Query and extract data from MySQL
+- Perform group-by and pivot analysis in Pandas
+- Visualize price trends and profitability metrics
+Example SQL Query
+SELECT category, AVG(final_price) FROM sales GROUP BY category;
+Pandas Snippet
+df.groupby(['Month'])['Final_Price'].mean().plot()
 
----
+## 🔐 Credentials
+Database credentials should be securely stored. Use .env or config file for production safety.
+  
+## 🌐 APIs Used
+None – analysis is entirely local using SQL + Pandas
 
-## ⚙️ Setup
+## 📮 API Endpoints
+Not applicable – this is a non-service-based analytical project
 
-### Requirements
-- Python 3.x with `pip`  
-- Jupyter Notebook  
-- MySQL Server or MySQL Workbench  
-- Python libraries: `pandas`, `seaborn`, `matplotlib`, `mysql-connector-python`
-
-### Install dependencies
-```bash
-pip install pandas seaborn matplotlib mysql-connector-python
-
-## Running the Analysis
-1. Open [SAL_BW_Project_3.ipynb](SAL_BW_Project_3.ipynb) in Jupyter and execute the cells to clean the dataset and export it to MySQL.
-2. In MySQL Workbench (or another SQL client), run the statements in `Build_week.sql` to create the table and explore the data.
-3. Return to the notebook to run the visualization cells, which use Seaborn and Matplotlib to plot the results.
-
+## 🧰 Technology Stack
+- Python: Data analysis with Pandas
+- MySQL: Data storage & extraction
+- Matplotlib / Seaborn: Visualizations
+- Jupyter Notebook: Code, commentary, and charts
+- SQL: Joins, filters, aggregations for multi-table analysis
+🧰 Technology Stack
+Python: Data analysis with Pandas
+MySQL: Data storage & extraction
+Matplotlib / Seaborn: Visualizations
+Jupyter Notebook: Code, commentary, and charts
+SQL: Joins, filters, aggregations for multi-table analysis
